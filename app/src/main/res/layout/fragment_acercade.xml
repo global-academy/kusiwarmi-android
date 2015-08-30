@@ -1,0 +1,27 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.kusi_warmi.www.kusiwarmi.AcercadeFragment"
+    android:background="#ffe8ffa5">
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="INFORMACION"
+        android:id="@+id/AcercaDe"
+        android:layout_gravity="center_horizontal|top"
+        android:textColor="#ffff6099" />
+
+    <TextView
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="@string/acerca_de"
+        android:textSize="18dp" />
+
+    </LinearLayout>
+
+

@@ -1,0 +1,46 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.kusi_warmi.www.kusiwarmi.ConsultasFragment">
+
+
+    <TextView android:layout_width="match_parent" android:layout_height="48dp"
+        android:text="@string/title_Consultas"
+        android:id="@+id/Consultas"
+        android:background="#ffffd5f3"
+        android:textSize="40sp"
+        android:textAlignment="center" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#fffaebff">
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="@string/haz_consulta" />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/texto_enviar"/>
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Enviar"
+            android:onClick="enviarPregunta"
+            android:id="@+id/button_enviar"
+            android:layout_gravity="right" />
+
+    </LinearLayout>
+
+    <ListView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/listView"
+        android:background="#ffffebfa" />
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Kusi Warmi</string>
+
+    <string name="title_Noticias">Noticias</string>
+    <string name="title_Casos">Casos</string>
+    <string name="title_Consultas">Consultas</string>
+    <string name="title_Contactos">Contactos</string>
+    <string name="title_AcercaDe">AcercaDe</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_example">Example action</string>
+
+    <string name="action_settings">Settings</string>
+
+
+
+    <string name="haz_consulta">Haz tu consulta</string>
+    <string name="acerca_de">
+        Feminicidio
+       Independientemente de la edad, escolaridad, clase social,
+        estado civil, religión, raza o etnia, las mujeres se enfrentan
+        a diversas formas de violencia por su condición de género, que adquiere
+        diversas expresiones como la violencia psicológica, física, sexual, económica,
+        patrimonial y feminicida -la que culmina en el homicidio y
+        otras formas de muerte violenta de mujeres.
+
+        El término feminicidio se refiere a los asesinatos de mujeres motivados por el sexismo
+        y la misoginia, porque implican el desprecio y el odio hacia ellas, porque ellos sienten
+        que tienen el derecho de terminar con sus vidas, o por la suposición de propiedad sobre las mujeres.
+
+        Los feminicidios son la expresión de la violencia extrema contra las mujeres y niñas.
+        Representa una experiencia de terror continuo, donde figuran humillación, desprecio,
+        maltrato físico y emocional, hostigamiento, violencia sexual, incesto, abandono.
+
+        Nuestro objetivo es mantener informadas alas personas y  alentarlas a que no
+        se queden calladas por que la mayoria de los casos sucede por que no dices nada de
+        lo que esta pasando.Nosotros somos:
+
+        Android   Paola Schneider
+        Web       Dusan Schneider
+                  Nestor
+                  Daniel
+        Proyecto  Adriana
+
+
+
+    </string>
+
+</resources>
