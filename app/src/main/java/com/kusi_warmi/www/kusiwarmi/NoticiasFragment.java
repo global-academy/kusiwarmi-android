@@ -75,7 +75,7 @@ public class NoticiasFragment extends Fragment {
         noticia=new ArrayList<Noticia>();
 
         noticia.add(new Noticia("T", "f", "c"));
-        noticia.add(new Noticia("Lider","5 de enero","perdio la copa"));
+        noticia.add(new Noticia("Lider","5/08/15","perdio la copa"));
 
         ListView listView = (ListView)fragmentView.findViewById(R.id.listView);
 

@@ -29,24 +29,12 @@ public class CasosAdapter extends ArrayAdapter<Casos> {
         textViewTitulo.setText(casos.titulo);
         TextView textViewFecha=(TextView) itemView.findViewById(R.id.fecha);
         textViewFecha.setText(casos.fecha);
-        TextView textViewContenido=(TextView) itemView.findViewById(R.id.contenido);
-        textViewContenido.setText(casos.contenido);
+        TextView textViewInformacion=(TextView) itemView.findViewById(R.id.informacion);
+        textViewInformacion.setText(casos.contenido);
 
 
         return itemView;
 
-        /*
-        View itemView = LayoutInflater.from(getContext())
-                .inflate(R.layout.casos, parent, false);
-        Casos casos = getItem(position);
-        TextView textViewTitulo =(TextView) itemView.findViewById(R.id.titulo);
-        textViewTitulo.setText(casos.titulo);
-        TextView textViewFecha=(TextView) itemView.findViewById(R.id.fecha);
-        textViewFecha.setText(casos.fecha);
-        TextView textViewContenido=(TextView) itemView.findViewById(R.id.contenido);
-        textViewContenido.setText(casos.contenido);
 
-        return itemView;
-        */
     }
 }

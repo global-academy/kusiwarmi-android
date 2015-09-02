@@ -104,7 +104,7 @@ public class NavigationDrawerFragment extends Fragment {
                 new String[]{
                         getString(R.string.title_Noticias),
                         getString(R.string.title_Casos),
-                        getString(R.string.title_Consultas),
+                        //getString(R.string.title_Consultas),
                         getString(R.string.title_Contactos),
                         getString(R.string.title_AcercaDe)
                 }));

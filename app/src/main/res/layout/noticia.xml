@@ -23,7 +23,8 @@
             android:text="fecha"
             android:gravity="right"
             android:layout_weight="1"
-            android:id="@+id/fecha"/>
+            android:id="@+id/fecha"
+            android:textSize="14dp" />
     </LinearLayout>
     <LinearLayout
         android:orientation="horizontal"
@@ -36,7 +37,8 @@
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="informacion"
             android:id="@+id/contenido"
-            android:layout_gravity="center_horizontal" />
+            android:layout_gravity="center_horizontal"
+            android:textSize="15dp" />
     </LinearLayout>
 
 </LinearLayout>

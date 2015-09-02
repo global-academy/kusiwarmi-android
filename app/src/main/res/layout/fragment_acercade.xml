@@ -15,12 +15,17 @@
         android:id="@+id/AcercaDe"
         android:layout_gravity="center_horizontal|top"
         android:textColor="#ffff6099" />
-
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <TextView
         android:layout_height="wrap_content"
         android:layout_width="match_parent"
         android:text="@string/acerca_de"
         android:textSize="18dp" />
+
+</ScrollView>
+
 
     </LinearLayout>
 

@@ -74,7 +74,7 @@ public class CasosFragment extends Fragment {
 
         casos=new ArrayList<Casos>();
 
-        casos.add(new Casos("Mas de 100 casos sin resolver", "27/08/15", "han habido noticias sobre este caso pero nadie hizo caso a..."));
+        casos.add(new Casos("Mas de 100 casos sin resolver", "7/08/15", "han habido noticias sobre este caso pero nadie hizo caso a..."));
         casos.add(new Casos("Lider", "5 de enero", "perdio la copa"));
 
         ListView listView = (ListView)fragmentView.findViewById(R.id.listView);

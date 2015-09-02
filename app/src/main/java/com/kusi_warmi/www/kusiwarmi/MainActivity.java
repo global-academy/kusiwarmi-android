@@ -59,13 +59,13 @@ public class MainActivity extends ActionBarActivity
             case 1:
                 fragment = new CasosFragment();
                 break;
-            case 2:
+           /* case 2:
                 fragment = new ConsultasFragment();
-                break;
-            case 3:
+                break;*/
+            case 2:
                 fragment = new ContactosFragment();
                 break;
-            case 4:
+            case 3:
                 fragment = new AcercadeFragment();
                 break;
 
@@ -90,13 +90,13 @@ public class MainActivity extends ActionBarActivity
             case 2:
                 mTitle = getString(R.string.title_Casos);
                 break;
-            case 3:
+            /*case 3:
                 mTitle = getString(R.string.title_Consultas);
-                break;
-            case 4:
+                break;*/
+            case 3:
                 mTitle= getString(R.string.title_Contactos);
                 break;
-            case 5:
+            case 4:
                 mTitle="Acerca de";
                 break;
         }
