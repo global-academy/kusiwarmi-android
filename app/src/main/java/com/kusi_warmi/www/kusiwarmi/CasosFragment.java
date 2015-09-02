@@ -4,12 +4,21 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseFile;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -32,6 +41,7 @@ public class CasosFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private ArrayList<Casos> casos;
+    private CasosAdapter adapter;
 
     /**
      * Use this factory method to create a new instance of
@@ -73,15 +83,31 @@ public class CasosFragment extends Fragment {
         View fragmentView =  inflater.inflate(R.layout.fragment_casos, container, false);
 
         casos=new ArrayList<Casos>();
-
-        casos.add(new Casos("Mas de 100 casos sin resolver", "7/08/15", "han habido noticias sobre este caso pero nadie hizo caso a..."));
-        casos.add(new Casos("Lider", "5 de enero", "perdio la copa"));
-
         ListView listView = (ListView)fragmentView.findViewById(R.id.listView);
-
-        CasosAdapter adapter= new CasosAdapter(container.getContext(),R.layout.casos, casos);
+        adapter = new CasosAdapter(container.getContext(), R.layout.casos, casos);
         listView.setAdapter(adapter);
+        ParseQuery query = new ParseQuery("Caso");
+        query.addDescendingOrder("createdAt");
+        query.findInBackground(new FindCallback<ParseObject>() {
 
+            @Override
+            public void done(List<ParseObject> casos, ParseException e) {
+                if (e == null) {
+                    Log.d("Caso", "Recuperados " + casos.size() + " casos");
+                    for (ParseObject caso : casos) {
+                        adapter.add(new Casos((String) caso.get("titulo"), "" + caso.get("fecha"), (String) caso.get("contenido")));
+                        try {
+                            caso.pin();
+                        } catch (ParseException e1) {
+                            e1.printStackTrace();
+                        }
+                    }
+                } else {
+                    Log.e("Caso", "Error: " + e.getMessage());
+                    Toast.makeText(getActivity(), "Ocurrio un error al recuperar los casos, por favor vuelva a intentar", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
         return fragmentView;
     }
 

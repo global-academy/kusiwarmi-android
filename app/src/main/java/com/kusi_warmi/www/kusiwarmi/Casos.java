@@ -10,11 +10,9 @@ public class Casos {
     public String contenido;
 
     public Casos(String titulo,String fecha,String contenido){
-
         this.titulo=titulo;
         this.fecha=fecha;
         this.contenido=contenido;
-
     }
     public String getTitulo() {
         return titulo;

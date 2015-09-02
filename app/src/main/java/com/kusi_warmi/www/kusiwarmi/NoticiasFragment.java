@@ -9,8 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
+import android.widget.Toast;
+
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
 
 import java.util.ArrayList;
+import java.util.List;
 
 
 /**
@@ -33,6 +40,7 @@ public class NoticiasFragment extends Fragment {
 
     private OnFragmentInteractionListener mListener;
     private ArrayList<Noticia> noticia;
+    private NoticiaAdapter adapter;
 
 
     /**
@@ -73,13 +81,31 @@ public class NoticiasFragment extends Fragment {
         View fragmentView =  inflater.inflate(R.layout.fragment_noticias, container, false);
 
         noticia=new ArrayList<Noticia>();
-
-        noticia.add(new Noticia("T", "f", "c"));
-        noticia.add(new Noticia("Lider","5/08/15","perdio la copa"));
-
         ListView listView = (ListView)fragmentView.findViewById(R.id.listView);
+        adapter = new NoticiaAdapter(container.getContext(), R.layout.noticia, noticia);
+        ParseQuery query = new ParseQuery("Noticia");
+        query.addDescendingOrder("createdAt");
+        query.findInBackground(new FindCallback<ParseObject>() {
 
-        NoticiaAdapter adapter= new NoticiaAdapter(container.getContext(),R.layout.noticia, noticia);
+            @Override
+            public void done(List<ParseObject> noticias, ParseException e) {
+                if (e == null) {
+                    Log.d("Noticia", "Recuperadas " + noticias.size() + " noticia");
+                    for (ParseObject noticia : noticias) {
+                        adapter.add(new Noticia((String) noticia.get("titulo"), "" + noticia.get("fecha"), (String) noticia.get("contenido")));
+                        try {
+                            noticia.pin();
+                        } catch (ParseException e1) {
+                            e1.printStackTrace();
+                        }
+                    }
+                } else {
+                    Log.e("Noticia", "Error: " + e.getMessage());
+                    Toast.makeText(getActivity(), "Ocurrio un error al recuperar las noticias, por favor vuelva a intentar", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
+
         listView.setAdapter(adapter);
 
         return fragmentView;
